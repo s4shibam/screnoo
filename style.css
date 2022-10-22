@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Poppins:wght@300;400;500;600&family=Raleway:wght@500&family=Sora:wght@600&display=swap");
+
+@tailwind base;
+@tailwind components;
+
+.custom-color {
+  background-image: linear-gradient(90deg, #8b6900, #c0ae7a, #8b6900);
+  background-size: 100%;
+  background-clip: filter;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@tailwind utilities;
+
+/* Developed with love by Shibam Saha */
