@@ -1,4 +1,4 @@
-## Screnoo-PC-Screen-Recorder
+## Screnoo - PC Screen Recorder
 
 
 **Details**
