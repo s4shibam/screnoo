@@ -19,11 +19,11 @@
 
 ![Image 1](https://drive.google.com/uc?export=view&id=1EbSUvHEDC3SfRUnlj-Xj204iXTN2XjCy)
 
-- Recording On
+- While Recording is On
 
 ![Image 2](https://drive.google.com/uc?export=view&id=1vYCU6PHXN_EX-417gewb695-Y3yer_Ys)
 
 
-- After Recording
+- After Recording (Download Section)
 
 ![Image 3](https://drive.google.com/uc?export=view&id=1mHuSoQ-DE8_rNPb_c-APuSpZyKnp798D)
