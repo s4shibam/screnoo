@@ -1,5 +1,5 @@
 // Screnoo - JS File
-import './style.css'
+import "./style.css";
 
 // All variable Declarations
 let stream = null,
