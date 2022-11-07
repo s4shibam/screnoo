@@ -14,7 +14,7 @@
 
 - [Screnoo - Record PC Screen with Audio](https://s4shibam-screnoo.netlify.app/)
 
-**Reference Images / Screenshots**
+**Reference Images / Screeshots**
 
 - Landing Page
 
