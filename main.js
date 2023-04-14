@@ -1,5 +1,5 @@
 // Screnoo - JS File
-import "./style.css";
+import './style.css';
 
 // All variable Declarations
 let stream = null,
@@ -20,21 +20,28 @@ async function setupRecording() {
   try {
     // Get access to Display Screen
     stream = await navigator.mediaDevices.getDisplayMedia({
-      video: true,
+      video: true
     });
-
+    console.log('E1');
     // Get access to Audio (Mic)
-    audio = await navigator.mediaDevices.getUserMedia({
-      audio: true,
-    });
+    try {
+      audio = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      });
+    } catch {
+      audio = null;
+    }
+
+    console.log('E2');
 
     // Call for Video Feedback - Live Preview of recording
     setupVideoFeedback();
+    console.log('E3');
   } catch (error) {
     // Handle error
 
     console.error(error);
-    alert("Error: The required permission could not be obtained!");
+    alert('Error: The required permission could not be obtained!');
     window.location.reload();
   }
 }
@@ -42,12 +49,12 @@ async function setupRecording() {
 // Function to display the live preview of what is being recorded
 function setupVideoFeedback() {
   if (stream) {
-    const video = document.querySelector(".video-feedback");
+    const video = document.querySelector('.video-feedback');
     video.srcObject = stream;
     video.play();
   } else {
-    console.warn("No stream available!");
-    alert("Error: Invalid sources!");
+    console.warn('No stream available!');
+    alert('Error: Invalid sources!');
   }
 }
 
@@ -55,12 +62,11 @@ function setupVideoFeedback() {
 async function startRecording() {
   await setupRecording();
 
-  if (stream && audio) {
+  if (stream || audio) {
     // Combine both video & audio stream with MediaStream object
-    mixedStream = new MediaStream([
-      ...stream.getTracks(),
-      ...audio.getTracks(),
-    ]);
+    mixedStream = audio
+      ? new MediaStream([...stream.getTracks(), ...audio.getTracks()])
+      : new MediaStream([...stream.getTracks()]);
 
     // Record the captured mediaStream with MediaRecorder constructor
     recorder = new MediaRecorder(mixedStream);
@@ -78,17 +84,17 @@ async function startRecording() {
     startButton.disabled = true;
     stopButton.disabled = false;
 
-    const start = document.querySelector(".start-recording");
-    start.classList.add("cursor-not-allowed");
+    const start = document.querySelector('.start-recording');
+    start.classList.add('cursor-not-allowed');
 
-    const stop = document.querySelector(".stop-recording");
-    stop.classList.remove("cursor-not-allowed");
+    const stop = document.querySelector('.stop-recording');
+    stop.classList.remove('cursor-not-allowed');
 
-    console.log("Recording started...");
+    console.log('Recording started...');
   } else {
     // Handle error
-    console.warn("Error: Invalid sources!");
-    alert("Error: Invalid sources!");
+    console.warn('Error: Invalid sources!');
+    alert('Error: Invalid sources!');
   }
 }
 
@@ -96,7 +102,7 @@ async function startRecording() {
 function stopRecording() {
   // Stop the recording
   recorder.stop();
-  console.log("Recording has stopped!");
+  console.log('Recording has stopped!');
 }
 
 function handleDataAvailable(e) {
@@ -107,7 +113,7 @@ function handleDataAvailable(e) {
 function handleStop(e) {
   // Convert the recorded media to blob type mp4 media
   const blob = new Blob(dataChunks, {
-    type: "video/mp4",
+    type: 'video/webm'
   });
 
   // Clear the dataChunks array
@@ -125,7 +131,7 @@ function handleStop(e) {
   recordedVideo.load();
 
   // Default video file name
-  downloadButton.download = "video_screnoo.mp4";
+  downloadButton.download = 'video_screnoo.webm';
 
   // Clear blob memory
   URL.revokeObjectURL(blob);
@@ -133,12 +139,12 @@ function handleStop(e) {
   // On completion of recording
   recordedVideo.onloadeddata = () => {
     // Hide recording/ home screen
-    const vr = document.querySelector(".video-recorder");
-    vr.classList.add("hidden");
+    const vr = document.querySelector('.video-recorder');
+    vr.classList.add('hidden');
 
     // Display Download Screen
-    const rc = document.querySelector(".recorded-video-wrap");
-    rc.classList.remove("hidden");
+    const rc = document.querySelector('.recorded-video-wrap');
+    rc.classList.remove('hidden');
 
     // Play recorded video
     recordedVideo.play();
@@ -146,15 +152,15 @@ function handleStop(e) {
 
   // Disable sharing prompt from screen
   stream.getTracks().forEach((track) => track.stop());
-  audio.getTracks().forEach((track) => track.stop());
+  audio && audio.getTracks().forEach((track) => track.stop());
 
-  console.log("Your video is ready!");
+  console.log('Your video is ready!');
 }
 
 // Home button
 function backToHome() {
   let backHome = confirm(
-    "Warning: Data will be lost if you leave the page! Are you sure?"
+    'Warning: Data will be lost if you leave the page! Are you sure?'
   );
   if (backHome) {
     window.location.reload();
@@ -162,22 +168,22 @@ function backToHome() {
 }
 
 // Program starts here - After page is fully loaded
-window.addEventListener("load", () => {
-  startButton = document.querySelector(".start-recording");
-  stopButton = document.querySelector(".stop-recording");
-  downloadButton = document.querySelector(".download-video");
-  recordedVideo = document.querySelector(".recorded-video");
-  homeButton = document.querySelector(".back-to-home");
-  logoButton = document.querySelector(".logo"); // Logo -> Home button
+window.addEventListener('load', () => {
+  startButton = document.querySelector('.start-recording');
+  stopButton = document.querySelector('.stop-recording');
+  downloadButton = document.querySelector('.download-video');
+  recordedVideo = document.querySelector('.recorded-video');
+  homeButton = document.querySelector('.back-to-home');
+  logoButton = document.querySelector('.logo'); // Logo -> Home button
 
   // Starts recording
-  startButton.addEventListener("click", startRecording);
+  startButton.addEventListener('click', startRecording);
   // Stops recording
-  stopButton.addEventListener("click", stopRecording);
+  stopButton.addEventListener('click', stopRecording);
   // Takes to home page
-  homeButton.addEventListener("click", backToHome);
+  homeButton.addEventListener('click', backToHome);
   // Takes to home page
-  logoButton.addEventListener("click", backToHome);
+  logoButton.addEventListener('click', backToHome);
 });
 
 // Developed with love by Shibam Saha
