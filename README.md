@@ -24,19 +24,19 @@
 
 - Landing Page
 
-<img src="./media/Landing.png" alt="Irrelevant Search" style="width: 75%; height: auto"/>
+<img src="./media/Landing.png" alt="Landing Page" style="width: 75%; height: auto"/>
 
 <br/>
 
 - While Recording is On
 
-<img src="./media/Recording.png" alt="Irrelevant Search" style="width: 75%; height: auto"/>
+<img src="./media/Recording.png" alt="Recording On" style="width: 75%; height: auto"/>
 
 <br/>
 
 - After Recording (Download Section)
 
-<img src="./media/Preview.png" alt="Irrelevant Search" style="width: 75%; height: auto"/>
+<img src="./media/Preview.png" alt="Recording Preview" style="width: 75%; height: auto"/>
 
 <br/>
 
