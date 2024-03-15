@@ -1,46 +1,54 @@
-## Screnoo - PC Screen Recorder
+<p align="center">
+    <a href="https://screnoo.shibamsaha.dev">
+        <img alt="Screnoo" width="100" src="./public/logo.ico" style="border-radius: 10px">
+    </a>
+</p>
 
-**Details**
+<div align="center">
+    <h1>Screnoo</h1>
+    <p>PC Screen Recorder</p>
+</div>
 
-- This is a web application to Record PC screens along with System / User audio.
-- An option is also integrated to download the recorded video in MP4 format.
-- Website is secured with Javascript Interaction to protect accidental data loss (Video Recording).
+<p align="center">
+    <img src="https://img.shields.io/github/languages/code-size/s4shibam/screnoo?style=flat-square" alt="Code Size">
+    <img src="https://img.shields.io/github/stars/s4shibam/screnoo?style=flat-square&logo=github" alt="Stars">
+</p>
 
-**Tech Stack**
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white)](#)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=black)](#)
-[![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black)](#)
+<br />
 
-[![Vite JS](https://img.shields.io/badge/Vite.js-646CFF?style=for-the-badge&logo=Vite&logoColor=white)](#)
 
-**Live Link**
+## ⚡ Introduction
 
-- [Screnoo - Record PC Screen with Audio](https://s4shibam-screnoo.netlify.app/)
+Screnoo is a PC Screen recorder which helps to record desktop or laptop screen along with system or user audio.
 
-**Reference Images / Screenshots**
+## ✨ Features
+  
+-  Record PC / Laptop screen
+-  Record system or user audio
+-  Download recording in `.mp4` format
 
-<br/>
 
-- Landing Page
+## ⚙️ Tech Stack
+  
+- HTML
+- Tailwind CSS
+- JavaScript
+- Vite JS
 
-<img src="./media/Landing.png" alt="Landing Page" style="width: 75%; height: auto"/>
+## 🎯 Goals
 
-<br/>
+- [x] To build an application related to multimedia
+- [x] To gain knowledge regarding JavaScript `mediaDevices` property
+- [x] To implement a functionality using JavaScript `MediaStream` Web API
 
-- While Recording is On
+## 🖼️ Screenshots
 
-<img src="./media/Recording.png" alt="Recording On" style="width: 75%; height: auto"/>
+![Landing Page](./readme_assets/screenshot_1.png)
+![Preview Video](./readme_assets/screenshot_2.png)
 
-<br/>
 
-- After Recording (Download Section)
-
-<img src="./media/Preview.png" alt="Recording Preview" style="width: 75%; height: auto"/>
-
-<br/>
-
-**Follow Me**
+## 👋🏻 Contact
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/s4shibam)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/s4shibam)
+[![Twitter](https://img.shields.io/badge/Twitter-00ACEE?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=s4shibam)
